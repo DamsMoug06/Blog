@@ -32,7 +32,7 @@ const ReactMarkdown = ({ content }: ReactMarkdownProps) => {
 
     // Lists
     html = html.replace(/^\s*-\s+(.*)$/gim, '<li class="ml-6 mb-2 text-gray-300">$1</li>');
-    html = html.replace(/(<li.*<\/li>)/s, '<ul class="list-disc my-4">$1</ul>');
+    html = html.replace(/(<li[\s\S]*<\/li>)/, '<ul class="list-disc my-4">$1</ul>');
 
     // Numbered lists
     html = html.replace(/^\s*\d+\.\s+(.*)$/gim, '<li class="ml-6 mb-2 text-gray-300">$1</li>');
